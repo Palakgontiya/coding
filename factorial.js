@@ -1,21 +1,17 @@
-// Find factorial of user input number
+function factorial(num){
 
-function findFactorial(n){
-    let factorial = 1;
-    if (n === 0 || n === 1) {
+    if (typeof(num) != 'number' || num < 0){
+        return 'invalid argument passed';
+    }
+    if(num == 1 || num == 0 ){
         return 1;
     }
-    for(let i = 1; i<=n; i++){
-        factorial = factorial * i
+    if(num == 0){
+        return 1;
     }
-    return factorial;
+      return num * factorial(num - 1);
 }
 
-// function findFactorial(n){
-//     if (n === 0 || n === 1) {
-//         return 1;
-//     }
-//     return n * findFactorial(n - 1);
-// }
+const result = factorial(5);
 
-console.log(findFactorial(5));
+console.log(result);
